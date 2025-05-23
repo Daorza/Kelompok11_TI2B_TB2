@@ -11,6 +11,9 @@ export default function MuseumDetail() {
         <Layout>
             <h1>{museum.name}</h1>
             <img src={museum.image} alt={museum.name} />
+            <p>
+                <strong>Lokasi: </strong> {museum.location}
+            </p>
             <p>{museum.description}</p>
         </Layout>
     ) : (
