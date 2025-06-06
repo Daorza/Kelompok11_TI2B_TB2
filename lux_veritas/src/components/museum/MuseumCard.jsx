@@ -7,7 +7,7 @@ export default function MuseumCard ({ museum }) {
             <div>
                 <h3>{museum.name}</h3>
                 <p>{museum.location}</p>
-                <Link to={'/museums/${museum.id}'}>
+                <Link to={`/museums/${museum.id}`}>
                     Lihat Detail
                 </Link>
             </div>

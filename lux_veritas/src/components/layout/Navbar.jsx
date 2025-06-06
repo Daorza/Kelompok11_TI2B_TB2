@@ -1,16 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link as MainLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 export default function Navbar() {
     return (
-        <header>
-            <Link to="/">Lux Veritas</Link>
-            <nav>
-                <Link to="/museums">Museum</Link>
-                <Link to="/collections">Collections</Link>
-                <Link to="/blog">Blog</Link>
-                <Link to="/tickets">Tickets</Link>
-                <Link to="/souvenirs">Souvenirs</Link>
-            </nav>
-        </header>
+    <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem', backgroundColor: '#f8f9fa', width: '100%' }}>
+        <MainLink to="/">Lux Veritas</MainLink>
+        <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none' }}>
+            <li>
+                <Link to="museum" smooth={true} duration={500}>Museum</Link>
+            </li>
+            <li>
+                <Link to="ticket" smooth={true} duration={500}>Ticket</Link>
+            </li>
+            <li>
+                <Link to="souvenir" smooth={true} duration={500}>Souvenir</Link>
+            </li>
+            <li>
+                <Link to="blog" smooth={true} duration={500}>Blog</Link>
+            </li>
+        </ul>
+    </nav>
     );
 }
