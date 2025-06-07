@@ -43,8 +43,8 @@ export default function Home() {
 
     return (
         <Layout>
-            <section>
-                <h1>Selamat Datang di Lux Veritas</h1>
+            <section style={{marginTop:'8rem'}}>
+                <h1 >Selamat Datang di Lux Veritas</h1>
                 <p>Jelajahi lalu temukan koleksi, karya, sejarah, dan budaya di sekitar Anda.</p>
                 <Link to="/museums">
                     <button>Lihat Daftar Semua Museum</button>
