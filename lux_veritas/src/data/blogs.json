@@ -4,13 +4,19 @@
     "title": "Menggali Sejarah Jakarta Lewat Museum",
     "excerpt": "Museum Jakarta menyimpan banyak kisah yang belum banyak diketahui. Artikel ini membahas beberapa di antaranya.",
     "content": "Konten lengkap artikel ini bisa ditampilkan pada halaman detail.",
-    "image": "/images/blog01.jpg"
+    "image": "/images/blog01.jpg",
+    "tags": ["Sejarah", "Museum", "Jakarta"],
+    "author": "Budi Santoso",
+    "date": "2025-06-01"
   },
   {
     "id": "blog02",
     "title": "Museum Interaktif yang Ramah Anak",
     "excerpt": "Ingin mengenalkan sejarah kepada anak? Beberapa museum ini sangat cocok dikunjungi bersama keluarga.",
     "content": "Konten lengkap artikel ini bisa ditampilkan pada halaman detail.",
-    "image": "/images/blog02.jpg"
+    "image": "/images/blog02.jpg",
+    "tags": ["Keluarga", "Anak", "Museum"],
+    "author": "Siti Nuraini",
+    "date": "2025-05-30"
   }
 ]

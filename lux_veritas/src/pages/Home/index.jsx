@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
-import { Element } from "react-scroll";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Element, scroller } from "react-scroll";
+import { useState, useEffect } from "react";
 
 import Layout from "../../components/layout/Layout";
 import MuseumCard from "../../components/museum/MuseumCard";
+import CollectionCard from "../../components/museum/CollectionCard";
 
 import data from "../../data/museums.json";
 import museumData from "../../data/museums.json";
@@ -13,6 +14,21 @@ import blogData from "../../data/blogs.json";
 
 
 export default function Home() {
+    // Scrolling
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const hash = location.hash.replace("#", "");
+            scroller.scrollTo(hash, {
+                duration: 800,
+                delay: 0,
+                smooth: "easeInOutQuart",
+                offset: -80,
+            });
+        }
+    }, [location]);
+
     // Map rekomendasi museum
     const dataMuseum = museumData.slice(0, 3);
 
@@ -96,24 +112,12 @@ export default function Home() {
                         <h1>Daftar Koleksi Museum</h1>
 
                         {collections.length === 0 ? (
-                            <p>Belum ada koleksi untuk museum ini.</p>
+                            <p>Belum ada koleksi museum.</p>
                         ) : (
                             <div>
-                                {collections.map((item) => {
-                                    const museum = museumData.find((m) => m.id === item.museumId);
-                                    return (
-                                        <div key={item.id}>
-                                            <img src={item.image} alt={item.name} />
-                                            <div>
-                                                <h2>{item.name}</h2>
-                                                <p>
-                                                    Museum: {museum ? museum.name : "Tidak diketahui"}
-                                                </p>
-                                                <p>{item.description}</p>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
+                                {collections.map((item) => (
+                                    <CollectionCard key={item.id} item={item} />
+                                ))}
                             </div>
                         )}
                     </div>

@@ -15,25 +15,27 @@ export default function Museums() {
 
     return (
         <Layout>
-            <div>
-                <h1>Daftar Museum</h1>
-                <input
-                    type="text"
-                    placeholder="Cari Museum"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-            </div>
+            <section style={{marginTop:'8rem'}}>
+                <div>
+                    <h1>Daftar Museum</h1>
+                    <input
+                        type="text"
+                        placeholder="Cari Museum"
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                </div>
 
-            <div>
-                {filteredMuseums.map((museum) => (
-                    <MuseumCard key={museum.id} museum={museum} />
-                ))}
-            </div>
+                <div>
+                    {filteredMuseums.map((museum) => (
+                        <MuseumCard key={museum.id} museum={museum} />
+                    ))}
+                </div>
 
-            {filteredMuseums.length === 0 && (
-                <p>Museum tidak ditemukan!</p>
-            )}
+                {filteredMuseums.length === 0 && (
+                    <p>Museum tidak ditemukan!</p>
+                )}
+            </section>
         </Layout>
     );
 }
