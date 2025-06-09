@@ -59,28 +59,35 @@ export default function Home() {
 
     return (
         <Layout>
-            <section style={{marginTop:'8rem'}}>
-                <h1 >Selamat Datang di Lux Veritas</h1>
-                <p>Jelajahi lalu temukan koleksi, karya, sejarah, dan budaya di sekitar Anda.</p>
-                <Link to="/museums">
-                    <button>Lihat Daftar Semua Museum</button>
-                </Link>
+            <section className="hero">
+                <div>
+                    <h1 style={{fontSize:'190px',marginTop:'-180px',marginBottom:'0px'}}>LUX VERITAS</h1>
+                    <Link style={{marginTop:'-100px'}} to="/museums">
+                        <button>Lihat Daftar Semua Museum</button>
+                    </Link>
+                </div>
+                
             </section>
 
-            <section>
-                <h2>Rekomendasi Museum</h2>
+            <section className="rekomendasiMuseum">
                 <div>
-                    {dataMuseum.map((museum) => (
-                        <div key={museum.id}>
-                            <img src={museum.image} alt={museum.name} />
-                            <h4>{museum.name}</h4>
-                            <p>{museum.location}</p>
-                            <Link to={`/museums/${museum.id}`}>
-                                Detail
-                            </Link>
+                    <div>
+                        <h2>Rekomendasi Museum</h2>
+                        <div style={{display:'flex'}}>
+                            {dataMuseum.map((museum) => (
+                                <div className="cardRekomendMusemu" key={museum.id}>
+                                    <img src={museum.image} alt={museum.name} />
+                                    <h4>{museum.name}</h4>
+                                    <p>{museum.location}</p>
+                                    <Link to={`/museums/${museum.id}`}>
+                                        Detail
+                                    </Link>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
+                
             </section>
 
             {/* museum */}
@@ -95,7 +102,6 @@ export default function Home() {
                             onChange={(e) => setSearch(e.target.value)}
                         />
                     </div>
-        
                     <div>
                         {filteredMuseums.map((museum) => (
                             <MuseumCard key={museum.id} museum={museum} />
