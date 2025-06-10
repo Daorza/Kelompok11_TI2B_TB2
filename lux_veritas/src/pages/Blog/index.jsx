@@ -1,6 +1,6 @@
 import Layout from "../../components/layout/Layout"; 
-import blogData from "../data/blogs.json";
-import { useParams } from "react-router-dom";
+import blogData from "../../data/blogs.json";
+import { useParams, Link } from "react-router-dom";
 
 export default function Blog() {
     const { id } = useParams();
@@ -26,7 +26,7 @@ export default function Blog() {
                     <span>Penulis: {blog.author}</span>
                     <span>Tanggal: {blog.date}</span>
                 </div>
-                <p>{blog.tags}</p>
+                <p>{blog.tags.join(", ")}</p>
                 <div>{blog.content}</div>
             </article>
             <Link to="/">Kembali ke Beranda</Link>

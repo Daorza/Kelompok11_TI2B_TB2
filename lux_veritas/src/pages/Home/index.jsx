@@ -21,7 +21,7 @@ export default function Home() {
         if (location.hash) {
             const hash = location.hash.replace("#", "");
             scroller.scrollTo(hash, {
-                duration: 800,
+                duration: 400,
                 delay: 0,
                 smooth: "easeInOutQuart",
                 offset: -80,
