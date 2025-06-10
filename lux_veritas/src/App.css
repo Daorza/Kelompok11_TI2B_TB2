@@ -48,6 +48,8 @@ nav {
 }
 nav ul li, nav a{
   font-size: 1rem ;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .hero{
   height: 100vh;
@@ -58,7 +60,7 @@ nav ul li, nav a{
   text-align: center;
   background-color: gray;
 }
-.rekomendasiMuseum{
+.rekomendasiMuseum,.koleksiMuseum{
   height: justify-contenr;
   width: 100%;
   display: flex;
@@ -67,7 +69,7 @@ nav ul li, nav a{
   text-align: center;
   background-color: rgba(128, 128, 128, 0.541);
 }
-.cardRekomendMusemu{
+.cardRekomendMusemu,.cardRekomendkoleksi{
   margin: 15px;
   background-color: gray;
   border-radius: 4px;
