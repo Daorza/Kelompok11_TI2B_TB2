@@ -92,7 +92,7 @@ export default function Home() {
 
             {/* museum */}
             <Element name="museum">
-                <section>
+                {/* <section>
                     <div>
                         <h1>Daftar Museum</h1>
                         <input
@@ -111,7 +111,7 @@ export default function Home() {
                     {filteredMuseums.length === 0 && (
                         <p>Museum tidak ditemukan!</p>
                     )}
-                </section>
+                </section> */}
 
                 <section>
                     <div>
@@ -120,7 +120,7 @@ export default function Home() {
                         {collections.length === 0 ? (
                             <p>Belum ada koleksi museum.</p>
                         ) : (
-                            <div>
+                            <div style={{display:'flex'}}>
                                 {collections.map((item) => (
                                     <CollectionCard key={item.id} item={item} />
                                 ))}
@@ -135,30 +135,33 @@ export default function Home() {
                 <section id="ticket">
                     <h1>Pesan Ticket Museum</h1>
                     <form onSubmit={handleSubmit} action="">
-                        <label>
-                            Nama Lengkap:
-                            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
-                        </label>
+                        <div style={{display:'grid'}}>
+                            <label>
+                                Nama Lengkap:
+                                <input type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
+                            </label>
 
-                        <label>
-                            Pilih Museum:
-                            <select value={museumId} onChange={(e) => setMuseumId(e.target.value)} required>
-                                <option value="">--- Pilih ---</option>
-                                {museumData.map((museum) => (
-                                    <option key={museum.id} value={museum.id}>{museum.name}</option>
-                                ))}
-                            </select>
-                        </label>
+                            <label>
+                                Pilih Museum:
+                                <select value={museumId} onChange={(e) => setMuseumId(e.target.value)} required>
+                                    <option value="">--- Pilih ---</option>
+                                    {museumData.map((museum) => (
+                                        <option key={museum.id} value={museum.id}>{museum.name}</option>
+                                    ))}
+                                </select>
+                            </label>
 
-                        <label>
-                            Tanggal Kunjungan:
-                            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-                        </label>
+                            <label>
+                                Tanggal Kunjungan:
+                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+                            </label>
 
-                        <label>
-                            Jumlah Tiket
-                            <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} required />
-                        </label>
+                            <label>
+                                Jumlah Tiket
+                                <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} required />
+                            </label>
+                        </div>
+                        
 
                         <p><strong>Total Harga: </strong> Rp {(harga * quantity).toLocaleString("id-ID")}</p>
 
@@ -169,7 +172,7 @@ export default function Home() {
 
             {/* suvenir */}
             <Element name="souvenir">
-                <section id="souvenir">
+                <section style={{backgroundColor:'grey'}}id="souvenir">
                     <h1>Souvenir Untukmu</h1>
                     <div>
                         {souvenirs.map((souvenir) => (
