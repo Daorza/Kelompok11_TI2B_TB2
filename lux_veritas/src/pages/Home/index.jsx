@@ -21,7 +21,7 @@ export default function Home() {
         if (location.hash) {
             const hash = location.hash.replace("#", "");
             scroller.scrollTo(hash, {
-                duration: 400,
+                duration: 800,
                 delay: 0,
                 smooth: "easeInOutQuart",
                 offset: -80,
@@ -135,36 +135,49 @@ export default function Home() {
                 <section id="ticket">
                     <h1>Pesan Ticket Museum</h1>
                     <form onSubmit={handleSubmit} action="">
-                        <div style={{display:'grid'}}>
-                            <label>
-                                Nama Lengkap:
-                                <input type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
-                            </label>
-
-                            <label>
-                                Pilih Museum:
-                                <select value={museumId} onChange={(e) => setMuseumId(e.target.value)} required>
-                                    <option value="">--- Pilih ---</option>
-                                    {museumData.map((museum) => (
-                                        <option key={museum.id} value={museum.id}>{museum.name}</option>
-                                    ))}
-                                </select>
-                            </label>
-
-                            <label>
-                                Tanggal Kunjungan:
-                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-                            </label>
-
-                            <label>
-                                Jumlah Tiket
-                                <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} required />
-                            </label>
+                        <div className="ticketContainer">
+                            <table>                            
+                                <tr>
+                                    <td><label> Nama Lengkap:</label></td>
+                                    <td>
+                                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Pilih Museum:</label></td>
+                                    <td>
+                                        <select value={museumId} onChange={(e) => setMuseumId(e.target.value)} required>
+                                            <option value="">--- Pilih ---</option>
+                                            {museumData.map((museum) => (
+                                            <option key={museum.id} value={museum.id}>{museum.name}</option>
+                                            ))}
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Tanggal Kunjungan:</label></td>
+                                    <td>
+                                        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Jumlah Tiket</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} required />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Total Harga: </label>
+                                    </td>
+                                    <td>
+                                        <p><strong></strong> Rp {(harga * quantity).toLocaleString("id-ID")}</p>
+                                    </td>
+                                </tr>
+                            </table>                                   
                         </div>
-                        
-
-                        <p><strong>Total Harga: </strong> Rp {(harga * quantity).toLocaleString("id-ID")}</p>
-
                         <button type="submit">Pesan Sekarang</button>
                     </form>
                 </section>
@@ -174,9 +187,9 @@ export default function Home() {
             <Element name="souvenir">
                 <section style={{backgroundColor:'grey'}}id="souvenir">
                     <h1>Souvenir Untukmu</h1>
-                    <div>
+                    <div className="souvenirContainer">
                         {souvenirs.map((souvenir) => (
-                            <div key={souvenir.id}>
+                            <div className="cardSouvenir" key={souvenir.id}>
                                 <img src={souvenir.image} alt={souvenir.name} />
                                 <h2>{souvenir.name}</h2>
                                 <p>{souvenir.description}</p>
@@ -193,15 +206,21 @@ export default function Home() {
             <Element name="blog">
                 <section id="blog">
                     <h1>Halaman Blog</h1>
-                    <div>
+                    <div className="blog">
                         {blogData.map((blog) => (
-                            <div key={blog.id}>
-                                <img src={blog.image} alt={blog.title} />
-                                <h2>{blog.title}</h2>
-                                <p>{blog.excerpt}</p>
-                                <Link to={`/blog/${blog.id}`}>
-                                    Selengkapnya
-                                </Link>
+                            <div className="blogCard" key={blog.id}>
+                                <img className="blogCardImg" src={blog.image} alt={blog.title} />
+                                <div style={{display:"flex", alignItems:'center'}}>
+                                    <div className="itemBlog">
+                                    <h2 className="blogCardTitle">{blog.title}</h2>
+                                    <p className="blogCardP">{blog.excerpt}</p>
+                                    <Link to={`/blog/${blog.id}`}>
+                                        Selengkapnya
+                                    </Link>
+                                </div>
+                                </div>
+                                
+                                
                             </div>
                         ))}
                     </div>
