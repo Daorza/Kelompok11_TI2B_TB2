@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Layout from "../../components/layout/Layout";
 import MuseumCard from "../../components/museum/MuseumCard";
 import CollectionCard from "../../components/museum/CollectionCard";
+import CartSidebar from "../../components/museum/CartSidebar";
 
 import data from "../../data/museums.json";
 import museumData from "../../data/museums.json";
@@ -56,6 +57,45 @@ export default function Home() {
         alert(`Tiket berhasil dipesan untuk ${name} di museum ${museumId} pada tanggal ${date}. Jumlah: ${quantity}. Total harga: Rp${harga * quantity}`);
     }
 
+    // Souvenir useState handle
+    const [cartItems, setCartItems] = useState([]);
+    const [showCart, setShowCart] = useState(false);
+
+    const addToCart = (souvenir) => {
+        setCartItems((prev) => {
+            const existing = prev.find((item) => item.id === souvenir.id);
+            if (existing) {
+                return prev.map((item) => 
+                item.id === souvenir.id
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
+                );
+            }
+            return [...prev, { ...souvenir, quantity: 1 }];
+        });
+    };
+
+    const handleIncrease = (id) => {
+        setCartItems((prev) => 
+            prev.map((item) => 
+                item.id === id ? { ...item, quantity: item.quantity + 1} 
+                : item
+            )
+        );
+    };    
+
+    const handleDecrease = (id) => {
+        setCartItems((prev) =>
+            prev.map((item) =>
+                item.id === id ? { ...item, quantity: item.quantity - 1}
+                : item
+            ).filter((item) => item.quantity > 0)
+        );
+    };
+
+    const handleRemove = (id) => {
+        setCartItems((prev) => prev.filter((item) => item.id !== id));
+    };
 
     return (
         <Layout>
@@ -174,20 +214,33 @@ export default function Home() {
             <Element name="souvenir">
                 <section style={{backgroundColor:'grey'}}id="souvenir">
                     <h1>Souvenir Untukmu</h1>
+                    <button onClick={() => setShowCart(true)}>Keranjang ({cartItems.length})</button>
+                    <br />
                     <div>
                         {souvenirs.map((souvenir) => (
                             <div key={souvenir.id}>
                                 <img src={souvenir.image} alt={souvenir.name} />
                                 <h2>{souvenir.name}</h2>
                                 <p>{souvenir.description}</p>
-                                <p><strong>Harga: </strong> Rp {souvenir.price.toLocaleString("id-ID")}</p>
+                                <p><strong>Harga: </strong> Rp{souvenir.price.toLocaleString("id-ID")}</p>
 
-                                <button onClick={() => alert(`Ditambahkan ke keranjang: ${souvenir.item}`)}>Tambah ke Keranjang</button>
+                                <button onClick={() => addToCart(souvenir)}>Tambah ke Keranjang</button>
                             </div>
                         ))}
                     </div>
                 </section>
             </Element>
+
+            {/* Sidebar */}
+            {showCart && (
+                <CartSidebar
+                    cartItems={cartItems}
+                    onClose={() => setShowCart(false)} 
+                    onIncrease={handleIncrease}
+                    onDrecrease={handleDecrease}
+                    onRemove={handleRemove}
+                />
+            )}
 
             {/* Blog */}
             <Element name="blog">
