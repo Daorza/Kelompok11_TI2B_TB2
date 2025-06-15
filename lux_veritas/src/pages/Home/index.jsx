@@ -112,7 +112,10 @@ export default function Home() {
             <section className="rekomendasiMuseum">
                 <div>
                     <div>
-                        <h2>Rekomendasi Museum</h2>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
+                            <h2>Rekomendasi Museum</h2>
+                            <a href="">Lihat Semua</a>
+                        </div>
                         <div style={{display:'flex'}}>
                             {dataMuseum.map((museum) => (
                                 <div className="cardRekomendMusemu" key={museum.id}>
@@ -126,8 +129,7 @@ export default function Home() {
                             ))}
                         </div>
                     </div>
-                </div>
-                
+                </div>               
             </section>
 
             {/* museum */}
@@ -173,74 +175,84 @@ export default function Home() {
             {/* Tiket */}
             <Element name="ticket">
                 <section id="ticket">
-                    <h1>Pesan Ticket Museum</h1>
-                    <form onSubmit={handleSubmit} action="">
-                        <div className="ticketContainer">
-                            <table>                            
-                                <tr>
-                                    <td><label> Nama Lengkap:</label></td>
-                                    <td>
-                                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><label>Pilih Museum:</label></td>
-                                    <td>
-                                        <select value={museumId} onChange={(e) => setMuseumId(e.target.value)} required>
-                                            <option value="">--- Pilih ---</option>
-                                            {museumData.map((museum) => (
-                                            <option key={museum.id} value={museum.id}>{museum.name}</option>
-                                            ))}
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><label>Tanggal Kunjungan:</label></td>
-                                    <td>
-                                        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Jumlah Tiket</label>
-                                    </td>
-                                    <td>
-                                        <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} required />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Total Harga: </label>
-                                    </td>
-                                    <td>
-                                        <p><strong></strong> Rp {(harga * quantity).toLocaleString("id-ID")}</p>
-                                    </td>
-                                </tr>
-                            </table>                                   
+                    <div className="tiketContainer">
+                        <div className="tiketItem">
+                            <h1>Pesan Ticket Museum</h1>
+                            <form onSubmit={handleSubmit} action="">
+                                <div className="ticketForm">
+                                    <table>                            
+                                        <tr>
+                                            <td><label> Nama Lengkap:</label></td>
+                                            <td>
+                                                <input type="text" value={name} onChange={(e) => setName(e.target.value)} required/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Pilih Museum:</label></td>
+                                            <td>
+                                                <select value={museumId} onChange={(e) => setMuseumId(e.target.value)} required>
+                                                    <option value="">--- Pilih ---</option>
+                                                    {museumData.map((museum) => (
+                                                    <option key={museum.id} value={museum.id}>{museum.name}</option>
+                                                    ))}
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Tanggal Kunjungan:</label></td>
+                                            <td>
+                                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>Jumlah Tiket</label>
+                                            </td>
+                                            <td>
+                                                <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} required />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label>Total Harga: </label>
+                                            </td>
+                                            <td>
+                                                <p><strong></strong> Rp {(harga * quantity).toLocaleString("id-ID")}</p>
+                                            </td>
+                                        </tr>
+                                    </table>                                   
+                                </div>
+                                <button type="submit">Pesan Sekarang</button>
+                            </form>
                         </div>
-                        <button type="submit">Pesan Sekarang</button>
-                    </form>
+                    </div>
                 </section>
             </Element>
 
             {/* suvenir */}
             <Element name="souvenir">
-                <section style={{backgroundColor:'grey'}}id="souvenir">
-                    <h1>Souvenir Untukmu</h1>
-                    <button onClick={() => setShowCart(true)}>Keranjang ({cartItems.length})</button>
-                    <br />
-                    <div className="souvenirContainer">
-                        {souvenirs.map((souvenir) => (
-                            <div className="cardSouvenir" key={souvenir.id}>
-                                <img src={souvenir.image} alt={souvenir.name} />
-                                <h2>{souvenir.name}</h2>
-                                <p>{souvenir.description}</p>
-                                <p><strong>Harga: </strong> Rp{souvenir.price.toLocaleString("id-ID")}</p>
-
-                                <button onClick={() => addToCart(souvenir)}>Tambah ke Keranjang</button>
+                <section className="rekomendasiMuseum">
+                    <div>
+                        <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
+                                <h2>Souvenir Untukmu</h2>
+                                <a href="">Lihat Semua</a>
                             </div>
-                        ))}
-                    </div>
+                            <div style={{display:'flex'}}>
+                                {souvenirs.map((souvenir) => (
+                                    <div className="cardSouvenir" key={souvenir.id}>
+                                        <img src={souvenir.image} alt={souvenir.name} />
+                                        <h2>{souvenir.name}</h2>
+                                        <p>{souvenir.description}</p>
+                                        <p><strong>Harga: </strong> Rp{souvenir.price.toLocaleString("id-ID")}</p>
+
+                                        <button onClick={() => addToCart(souvenir)}>Tambah ke Keranjang</button>
+                                    </div>
+                                ))}
+                            </div>
+                            <button onClick={() => setShowCart(true)}>Keranjang ({cartItems.length})</button>
+                        </div>
+                    </div>               
                 </section>
             </Element>
 

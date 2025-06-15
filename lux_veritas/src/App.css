@@ -83,12 +83,29 @@ nav ul li, nav a{
   height: 300px;
   width: 245px;
 }
-.ticketContainer{
+.ticketForm{
   display: flex;
   justify-content :center;
   align-items: center;
   text-align : left;
 }
+.tiketContainer{
+  width:100%;
+  height:60vh;
+  background-color:white;
+  display: flex;
+  justify-content :center;
+  align-items: center;  
+}
+.tiketItem{
+  background-color:yellow;
+  width:80%;
+  padding:20px;
+}
+.tiketItem h1{
+  margin:10px;
+}
+
 .souvenirContainer{
   width:100%;
   display :flex;
