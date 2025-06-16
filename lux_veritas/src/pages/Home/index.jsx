@@ -123,7 +123,7 @@ export default function Home() {
                         <div style={{display:'flex'}}>
                             {dataMuseum.map((museum) => (
                                 <div className="cardRekomendMusemu" key={museum.id}
-                                    style={{ display: 'grid', gridTemplateRows: 'repeat(2, 1fr)', gap: '1rem', boxShadow: '4px 4px 8px rgba(37, 37, 37, 0.4)'}}>
+                                    style={{ display: 'grid', gridTemplateRows: 'repeat(2, 1fr)', gap: '1rem', boxShadow: '4px 4px 8px rgba(37, 37, 37, 0.4)', color: '#102E50'}}>
                                     <img src={museum.image} alt={museum.name} />
                                         <h4 style={{ textAlign: 'left', marginLeft: '1.5rem'}}>{museum.name}</h4>
                                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin: '0 2rem' }}>

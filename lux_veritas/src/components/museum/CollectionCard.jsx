@@ -12,10 +12,12 @@ export default function CollectionCard({ item }) {
         padding: '1rem',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.05)',
         display: 'flex',
+        gap: '1rem',
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
         transition: 'transform 0.2s',
+        margin: '0 1rem'
       }}
     >
       <img
@@ -30,7 +32,7 @@ export default function CollectionCard({ item }) {
         }}
       />
       <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{item.name}</h3>
-      <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '0.25rem' }}>
+      <p style={{ fontSize: '0.95rem', color: '#102E50', marginBottom: '0.25rem' }}>
         <strong>Museum:</strong> {museum ? museum.name : 'Tidak diketahui'}
       </p>
       <p style={{ fontSize: '0.95rem', color: '#444', lineHeight: '1.4' }}>{item.description}</p>
