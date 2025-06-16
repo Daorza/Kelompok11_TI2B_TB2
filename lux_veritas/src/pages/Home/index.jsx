@@ -158,7 +158,7 @@ export default function Home() {
                     )}
                 </section> */}
 
-                <section>
+                <section style={{ padding: '4rem' }}>
                     <div>
                         <h1>Daftar Koleksi Museum</h1>
 
@@ -166,7 +166,7 @@ export default function Home() {
                             <p>Belum ada koleksi museum.</p>
                         ) : (
                             <div style={{display:'flex'}}>
-                                {collections.map((item) => (
+                                {dataCollection.map((item) => (
                                     <CollectionCard key={item.id} item={item} />
                                 ))}
                             </div>
