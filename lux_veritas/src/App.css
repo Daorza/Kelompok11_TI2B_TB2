@@ -121,8 +121,8 @@ nav ul li, nav a{
   margin: 15px;
   background-color: gray;
   border-radius: 4px;
-  height: 400px;
-  width: 300px;
+  /* height: 400px;
+  width: 300px; */
 }
 .blogCard{
   display: flex;

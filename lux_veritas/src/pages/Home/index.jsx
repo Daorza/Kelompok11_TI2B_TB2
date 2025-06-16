@@ -30,8 +30,9 @@ export default function Home() {
         }
     }, [location]);
 
-    // Map rekomendasi museum
+    // Map rekomendasi museum & koleksi
     const dataMuseum = museumData.slice(0, 3);
+    const dataCollection = collectionData.slice(0, 3);
 
     // filter search museum
     const [search, setSearch] = useState("");
@@ -114,7 +115,9 @@ export default function Home() {
                     <div style={{ padding: '4rem'}}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
                             <h2>Rekomendasi Museum</h2>
-                            <a href="">Lihat Semua</a>
+                            <Link to="/museums">
+                                Lihat Semua Museum →
+                            </Link>
                         </div>
                         <div style={{display:'flex'}}>
                             {dataMuseum.map((museum) => (
@@ -155,7 +158,7 @@ export default function Home() {
                     )}
                 </section> */}
 
-                <section>
+                <section style={{ padding: '4rem' }}>
                     <div>
                         <h1>Daftar Koleksi Museum</h1>
 
@@ -163,7 +166,7 @@ export default function Home() {
                             <p>Belum ada koleksi museum.</p>
                         ) : (
                             <div style={{display:'flex'}}>
-                                {collections.map((item) => (
+                                {dataCollection.map((item) => (
                                     <CollectionCard key={item.id} item={item} />
                                 ))}
                             </div>
@@ -231,7 +234,7 @@ export default function Home() {
 
             {/* suvenir */}
             <Element name="souvenir">
-                <section className="rekomendasiMuseum">
+                <section className="">
                     <div>
                         <div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
@@ -241,12 +244,14 @@ export default function Home() {
                             <div style={{display:'flex'}}>
                                 {souvenirs.map((souvenir) => (
                                     <div className="cardSouvenir" key={souvenir.id}>
-                                        <img src={souvenir.image} alt={souvenir.name} />
-                                        <h2>{souvenir.name}</h2>
-                                        <p>{souvenir.description}</p>
-                                        <p><strong>Harga: </strong> Rp{souvenir.price.toLocaleString("id-ID")}</p>
+                                        <img src={souvenir.image} alt={souvenir.name} style={{ height: '50%', width: '75%', marginTop: '1rem', borderRadius: '0.5rem'}} />
+                                        <div style={{ padding: '1rem' }}>
+                                            <h2>{souvenir.name}</h2>
+                                            <p>{souvenir.description}</p>
+                                            <p><strong>Harga: </strong> Rp{souvenir.price.toLocaleString("id-ID")}</p>
 
-                                        <button onClick={() => addToCart(souvenir)}>Tambah ke Keranjang</button>
+                                            <button onClick={() => addToCart(souvenir)}>Tambah ke Keranjang</button>
+                                        </div>
                                     </div>
                                 ))}
                             </div>

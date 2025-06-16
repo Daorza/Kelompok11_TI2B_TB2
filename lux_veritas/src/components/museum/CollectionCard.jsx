@@ -12,7 +12,7 @@ export default function CollectionCard({ item }) {
             padding: '1rem',
             boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
         }}>
-            <img src={item.image} alt={item.name} />
+            <img src={item.image} alt={item.name} style={{ height: '55%'}} />
             <h2>{item.name}</h2>
             <p>Museum: {museum ? museum.name : "Tidak diketahui"}</p>
             <p>{item.description}</p>
