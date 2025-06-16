@@ -101,9 +101,9 @@ export default function Home() {
         <Layout>
             <section className="hero">
                 <div>
-                    <h1 style={{fontSize:'190px',marginTop:'-180px',marginBottom:'0px'}}>LUX VERITAS</h1>
-                    <Link style={{marginTop:'-100px'}} to="/museums">
-                        <button>Lihat Daftar Semua Museum</button>
+                    <h1 style={{fontSize:'190px',marginTop:'-180px',marginBottom:'0px', color: 'white', textShadow: '2px 2px 12px #ffffff'}}>LUX VERITAS</h1>
+                    <Link to="/museums">
+                        <button style={{marginTop:'5rem', padding:'1rem 2rem', backgroundColor: '#102E50', color: '#faf9f6'}}>Lihat Daftar Semua Museum</button>
                     </Link>
                 </div>
                 
@@ -111,7 +111,7 @@ export default function Home() {
 
             <section className="rekomendasiMuseum">
                 <div>
-                    <div>
+                    <div style={{ padding: '4rem'}}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
                             <h2>Rekomendasi Museum</h2>
                             <a href="">Lihat Semua</a>

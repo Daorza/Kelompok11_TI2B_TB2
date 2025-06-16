@@ -5,8 +5,8 @@ import collectionData from '../../data/collections.json';
 import CollectionCard from '../../components/museum/CollectionCard';
 
 export default function MuseumDetail() {
-  const { id } = useParams();
-  const museum = data.find((m) => m.id === id); 
+  const { museumId } = useParams();
+  const museum = data.find((m) => m.id === museumId);
 
   if (!museum) {
     return (
