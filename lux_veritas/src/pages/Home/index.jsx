@@ -101,7 +101,7 @@ export default function Home() {
         <Layout>
             <section className="hero">
                 <div>
-                    <h1 style={{fontSize:'190px',marginTop:'-180px',marginBottom:'0px', color: 'white', textShadow: '2px 2px 12px #ffffff'}}>LUX VERITAS</h1>
+                    <h1 style={{fontSize:'190px',marginBottom:'0px', color: 'white', textShadow: '2px 2px 12px #ffffff'}}>LUX VERITAS</h1>
                     <Link to="/museums">
                         <button style={{marginTop:'5rem', padding:'1rem 2rem', backgroundColor: '#102E50', color: '#faf9f6'}}>Lihat Daftar Semua Museum</button>
                     </Link>
@@ -114,7 +114,7 @@ export default function Home() {
                     <div style={{ padding: '4rem'}}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
                             <h2>Rekomendasi Museum</h2>
-                            <a href="">Lihat Semua</a>
+                            <a  className="link" href="">Lihat Semua</a>
                         </div>
                         <div style={{display:'flex'}}>
                             {dataMuseum.map((museum) => (
@@ -154,21 +154,48 @@ export default function Home() {
                         <p>Museum tidak ditemukan!</p>
                     )}
                 </section> */}
-
-                <section>
+                <section className="rekomendasiMuseum">
                     <div>
-                        <h1>Daftar Koleksi Museum</h1>
-
-                        {collections.length === 0 ? (
-                            <p>Belum ada koleksi museum.</p>
-                        ) : (
+                        <div style={{ padding: '4rem'}}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
+                                <h2>Rekomendasi Museum</h2>
+                                <a  className="link" href="">Lihat Semua</a>
+                            </div>
                             <div style={{display:'flex'}}>
-                                {collections.map((item) => (
-                                    <CollectionCard key={item.id} item={item} />
+                                {dataMuseum.map((museum) => (
+                                    <div className="cardRekomendMusemu" key={museum.id}>
+                                        <img src={museum.image} alt={museum.name} />
+                                        <h4>{museum.name}</h4>
+                                        <p>{museum.location}</p>
+                                        <Link to={`/museums/${museum.id}`}>
+                                            Detail
+                                        </Link>
+                                    </div>
                                 ))}
                             </div>
-                        )}
-                    </div>
+                        </div>
+                    </div>               
+                </section>
+                <section>
+                    <div className="rekomendasiMuseum">
+                        <div style={{width:'80%'}}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
+                                <h2>Daftar Koleksi Museum</h2>
+                                <a className="link" href="">Lihat Semua</a>
+                            </div>
+                            <div style={{display:'flex'}}>
+                            {collections.length === 0 ? (
+                                <p>Belum ada koleksi museum.</p>
+                            ) : (
+                                <div style={{display:'flex'}}>
+                                    {collections.map((item) => (
+                                        <CollectionCard key={item.id} item={item} />
+                                    ))}
+                                </div>
+                            )}
+                            </div>
+                        </div>
+                    </div>    
                 </section>
             </Element>
 
@@ -236,7 +263,7 @@ export default function Home() {
                         <div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
                                 <h2>Souvenir Untukmu</h2>
-                                <a href="">Lihat Semua</a>
+                                <a  className="link" href="">Lihat Semua</a>
                             </div>
                             <div style={{display:'flex'}}>
                                 {souvenirs.map((souvenir) => (
