@@ -102,7 +102,7 @@ export default function Home() {
         <Layout>
             <section className="hero">
                 <div>
-                    <h1 style={{fontSize:'190px',marginTop:'-180px',marginBottom:'0px', color: 'white', textShadow: '2px 2px 12px #ffffff'}}>LUX VERITAS</h1>
+                    <h1 style={{fontSize:'190px',marginBottom:'0px', color: 'white', textShadow: '2px 2px 12px #ffffff'}}>LUX VERITAS</h1>
                     <Link to="/museums">
                         <button style={{marginTop:'5rem', padding:'1rem 2rem', backgroundColor: '#102E50', color: '#faf9f6'}}>Lihat Daftar Semua Museum</button>
                     </Link>
@@ -158,7 +158,7 @@ export default function Home() {
                     )}
                 </section> */}
 
-                <section style={{ padding: '4rem' }}>
+                <section>
                     <div>
                         <h1>Daftar Koleksi Museum</h1>
 
@@ -166,7 +166,7 @@ export default function Home() {
                             <p>Belum ada koleksi museum.</p>
                         ) : (
                             <div style={{display:'flex'}}>
-                                {dataCollection.map((item) => (
+                                {collections.map((item) => (
                                     <CollectionCard key={item.id} item={item} />
                                 ))}
                             </div>
@@ -239,7 +239,7 @@ export default function Home() {
                         <div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center' }}>
                                 <h2>Souvenir Untukmu</h2>
-                                <a href="">Lihat Semua</a>
+                                <a  className="link" href="">Lihat Semua</a>
                             </div>
                             <div style={{display:'flex'}}>
                                 {souvenirs.map((souvenir) => (
