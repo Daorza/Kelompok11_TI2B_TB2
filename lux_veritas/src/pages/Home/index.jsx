@@ -142,29 +142,7 @@ export default function Home() {
                     </div>
                 </div>               
             </section>
-
-            {/* museum */}
-                {/* <section>
-                    <div>
-                        <h1>Daftar Museum</h1>
-                        <input
-                            type="text"
-                            placeholder="Cari Museum"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        {filteredMuseums.map((museum) => (
-                            <MuseumCard key={museum.id} museum={museum} />
-                        ))}
-                    </div>
-        
-                    {filteredMuseums.length === 0 && (
-                        <p>Museum tidak ditemukan!</p>
-                    )}
-                </section> */}
-
+            
                 <section style={{ padding: '4rem' }}>
                     <div>
                         <h1>Daftar Koleksi Museum</h1>

@@ -64,7 +64,7 @@ export default function Blog() {
                     Tags: {blog.tags.join(", ")}
                 </p>
                 <div style={{ color: '#333', fontSize: '1rem' }}>
-                    {blog.content}
+                    {blog.excerpt}
                 </div>
             </article>
 

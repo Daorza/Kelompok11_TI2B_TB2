@@ -23,7 +23,7 @@ export default function CollectionCard({ item }) {
         alt={item.name}
         style={{
           width: '100%',
-          height: '180px',
+          height: '100%',
           objectFit: 'cover',
           borderRadius: '8px',
           marginBottom: '1rem',
