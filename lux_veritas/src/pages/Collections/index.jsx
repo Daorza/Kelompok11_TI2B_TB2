@@ -7,13 +7,28 @@ export default function Collections() {
 
     return (
         <Layout>
-            <div>
-                <h1>Daftar Koleksi Museum</h1>
+            <div style={{ padding: '2rem', marginTop: '6rem' }}>
+                <h1 style={{
+                    fontSize: '2rem',
+                    marginBottom: '2rem',
+                    textAlign: 'center',
+                    color: '#333'
+                }}>
+                    Daftar Koleksi Museum
+                </h1>
 
                 {collections.length === 0 ? (
-                    <p>Belum ada koleksi untuk museum ini.</p>
+                    <p style={{ textAlign: 'center', fontSize: '1rem' }}>
+                        Belum ada koleksi untuk museum ini.
+                    </p>
                 ) : (
-                    <div>
+                    <div
+                        style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                            gap: '1.5rem',
+                        }}
+                    >
                         {collections.map((item) => (
                             <CollectionCard key={item.id} item={item} />
                         ))}

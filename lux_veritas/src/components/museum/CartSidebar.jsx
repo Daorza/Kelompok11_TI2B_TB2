@@ -4,7 +4,7 @@ export default function CartSidebar({ cartItems, onClose, onIncrease, onDrecreas
     const totalHarga = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     return (
-        <div style={{ padding: "1rem", marginTop: "6rem", backgroundColor: "#fff", border: "1px solid #ddd", borderRadius: "8px", position: "fixed", right: "0", top: "0", width: "360px", height: "80%", overflowY: "auto" }}>
+        <div style={{ padding: "1rem", marginTop: "6rem", backgroundColor: "#fff", color: '#102E55', border: "1px solid #ddd", borderRadius: "8px", position: "fixed", right: "0", top: "0", width: "360px", height: "80%", overflowY: "auto" }}>
             <button onClick={onClose} style={{ top: "1rem", left: "0.5rem", backgroundColor: "#B22222", color: "#fff", padding: "0.5rem 2rem", border: "none", borderRadius: "4px", cursor: "pointer" }}> Tutup Keranjang</button>
             <h2>Keranjang</h2>
 

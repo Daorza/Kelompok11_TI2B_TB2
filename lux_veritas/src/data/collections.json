@@ -3,35 +3,35 @@
         "id": "c1",
         "museumId": "museum01",
         "name": "Arca Buddha",
-        "image": "../public/images/koleksi-arca.jpeg",
+        "image": "/images/koleksi-arca.jpeg",
         "description": "Koleksi arca Buddha dari berbagai periode dan daerah di Indonesia, menampilkan seni pahat yang halus dan detail."
     },
     {
         "id": "c2",
         "museumId": "museum02",
         "name": "Keramik Dinasti Ming",
-        "image": "../public/images/koleksi-keramik.jpeg",
+        "image": "/images/koleksi-keramik.jpeg",
         "description": "Koleksi keramik dari Dinasti Ming yang menunjukkan keindahan dan teknik pembuatan keramik Tiongkok."
     },
     {
         "id": "c3",
         "museumId": "museum03",
         "name": "Kain Batik Jawa",
-        "image": "../public/images/koleksi-batik.jpeg",
+        "image": "/images/koleksi-batik.jpeg",
         "description": "Koleksi kain batik tradisional dari berbagai daerah di Jawa, masing-masing dengan motif dan filosofi unik."
     },
     {
         "id": "c4",
         "museumId": "museum04",
         "name": "Tenun Ikat Sumba",
-        "image": "../public/images/koleksi-tenun.jpeg",
+        "image": "/images/koleksi-tenun.jpeg",
         "description": "Koleksi tenun ikat dari Sumba yang terkenal dengan warna-warna cerah dan pola yang rumit."
     },
     {
         "id": "c5",
         "museumId": "museum05",
         "name": "Uang Kuno Indonesia",
-        "image": "../public/images/koleksi-uang.jpeg",
+        "image": "/images/koleksi-uang.jpeg",
         "description": "Koleksi uang kertas dan logam kuno yang digunakan di Indonesia sebelum era modern."
     }
 ]

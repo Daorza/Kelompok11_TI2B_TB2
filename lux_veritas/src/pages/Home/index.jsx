@@ -22,7 +22,7 @@ export default function Home() {
         if (location.hash) {
             const hash = location.hash.replace("#", "");
             scroller.scrollTo(hash, {
-                duration: 800,
+                duration: 400,
                 delay: 0,
                 smooth: "easeInOutQuart",
                 offset: -80,
@@ -55,7 +55,7 @@ export default function Home() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`Tiket berhasil dipesan untuk ${name} di museum ${museumId} pada tanggal ${date}. Jumlah: ${quantity}. Total harga: Rp${harga * quantity}`);
+        alert(`Tiket berhasil dipesan untuk ${name} pada tanggal ${date}. Jumlah: ${quantity}. Total harga: Rp${harga * quantity}`);
     }
 
     // Souvenir useState handle
@@ -110,6 +110,7 @@ export default function Home() {
                 
             </section>
 
+            <Element name="museum">
             <section className="rekomendasiMuseum">
                 <div>
                     <div style={{ padding: '4rem'}}>
@@ -143,7 +144,6 @@ export default function Home() {
             </section>
 
             {/* museum */}
-            <Element name="museum">
                 {/* <section>
                     <div>
                         <h1>Daftar Museum</h1>
@@ -251,7 +251,7 @@ export default function Home() {
                                 {souvenirs.map((souvenir) => (
                                     <div  key={souvenir.id} style={{ backgroundColor: '#f9f9f9', border: '1px solid #ddd', borderRadius: '8px', margin: '0.5rem', padding: '0.5rem', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                                         <img src={souvenir.image} alt={souvenir.name} style={{ height: '50%', width: '75%', marginTop: '1rem', borderRadius: '0.5rem'}} />
-                                        <div style={{ padding: '1rem' }}>
+                                        <div style={{ padding: '1rem', color: '#102E55'}}>
                                             <h2>{souvenir.name}</h2>
                                             <p>{souvenir.description}</p>
                                             <p><strong>Harga: </strong> Rp{souvenir.price.toLocaleString("id-ID")}</p>
