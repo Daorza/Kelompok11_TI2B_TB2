@@ -2,7 +2,7 @@
   {
     "id": "s01",
     "name": "Miniatur Monas",
-    "image": "../public/images/souvenir-mini.jpeg",
+    "image": "/images/souvenir-mini.jpeg",
     "description": "Miniatur Monas dari resin, cocok sebagai hiasan meja.",
     "price": 50000,
     "quantity": 1
@@ -10,7 +10,7 @@
   {
     "id": "s02",
     "name": "Pin Batik Museum Tekstil",
-    "image": "../public/images/souvenir-pin.jpeg",
+    "image": "/images/souvenir-pin.jpeg",
     "description": "Pin khas batik dari Museum Tekstil.",
     "price": 25000,
     "quantity": 1
@@ -18,7 +18,7 @@
   {
     "id": "s03",
     "name": "Gantungan Kunci Museum",
-    "image": "../public/images/souvenir-ganci.jpeg",
+    "image": "/images/souvenir-ganci.jpeg",
     "description": "Gantungan kunci lucu dengan ikon-ikon museum Jabodetabek.",
     "price": 15000,
     "quantity": 1

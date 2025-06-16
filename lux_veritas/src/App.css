@@ -60,7 +60,7 @@ nav ul li, nav a{
   justify-content: center;
   text-align: center;
   background-color: gray;
-  background-image: url('../../public/images/home.jpeg');
+  background-image: url('/images/home.jpeg');
   background-size: cover;
 }
 
@@ -104,7 +104,7 @@ nav ul li, nav a{
   display: flex;
   justify-content :center;
   align-items: center;  
-  background-image: url('../../public/images/tiket.jpeg');
+  background-image: url('/images/tiket.jpeg');
 }
 .tiketItem{
   background-color: #faf9f6;

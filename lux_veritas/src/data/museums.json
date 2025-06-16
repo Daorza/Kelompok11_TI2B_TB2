@@ -3,35 +3,35 @@
     "id": "museum01",
     "name": "Museum Nasional Indonesia",
     "location": "Jakarta Pusat",
-    "image": "../public/images/museum-nasional.jpg",
+    "image": "/images/museum-nasional.jpg",
     "description": "Museum yang menyimpan koleksi sejarah dan budaya dari seluruh Indonesia, dikenal juga sebagai Museum Gajah."
   },
   {
     "id": "museum02",
     "name": "Museum Tekstil",
     "location": "Jakarta Barat",
-    "image": "../public/images/museum-tekstil.jpeg",
+    "image": "/images/museum-tekstil.jpeg",
     "description": "Museum yang memamerkan berbagai jenis kain tradisional Indonesia dan teknik pembuatannya."
   },
   {
     "id": "museum03",
     "name": "Museum Bank Indonesia",
     "location": "Jakarta Barat",
-    "image": "../public/images/museum-bi.jpeg",
+    "image": "/images/museum-bi.jpeg",
     "description": "Museum modern yang menampilkan sejarah perbankan dan perekonomian di Indonesia."
   },
   {
     "id": "museum04",
     "name": "Museum Kepresidenan Balai Kirti",
     "location": "Bogor",
-    "image": "../public/images/museum-kepresidenan.jpeg",
+    "image": "/images/museum-kepresidenan.jpeg",
     "description": "Museum yang mengabadikan sejarah kepresidenan Republik Indonesia."
   },
   {
     "id": "museum05",
     "name": "Museum Pustaka Peranakan Tionghoa",
     "location": "Tangerang",
-    "image": "../public/images/museum-tionghoa.jpeg",
+    "image": "/images/museum-tionghoa.jpeg",
     "description": "Museum yang menggambarkan kontribusi masyarakat Tionghoa dalam sejarah Indonesia."
   }
 ]
