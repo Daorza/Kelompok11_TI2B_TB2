@@ -142,7 +142,7 @@ export default function Home() {
                     </div>
                 </div>               
             </section>
-            
+
                 <section style={{ padding: '4rem' }}>
                     <div>
                         <h1>Daftar Koleksi Museum</h1>
